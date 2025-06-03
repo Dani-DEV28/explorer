@@ -45,6 +45,10 @@ public class ExplorerSearch {
         if (curR < 0 || curR >= island.length || curC < 0 || curC >= island[0].length) return 0;
         if (visited[curR][curC]) return 0;
         if (island[curR][curC] == 2 || island[curR][curC] == 3) return 0;
+        
+        if (island[curR][curC] == 0) {
+            throw new IllegalArgumentException("Extra Explorer found");
+        }
 
         visited[curR][curC] = true;
 
